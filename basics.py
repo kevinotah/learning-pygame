@@ -11,11 +11,20 @@ pygame.display.set_caption("Basics")
 
 clock = pygame.time.Clock()
 
+sky_surface = pygame.image.load('sky.png')
+
+ground_surface = pygame.image.load('pavement.png')
+ground_surface = pygame.transform.scale(ground_surface, (1200, 600))
+center = ground_surface.get_rect(center = (500, 250))
+
 running = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+    
+    display.blit(sky_surface, (-1, -1))
+    display.blit(ground_surface, center)        
         
     pygame.display.update()
     clock.tick(60)
