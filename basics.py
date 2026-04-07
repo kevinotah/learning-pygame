@@ -16,7 +16,7 @@ font = pygame.font.Font("retrovibes.ttf", 100)
 sky_surface = pygame.image.load('sky.png')
 ground_surface = pygame.image.load('pavement.png')
 text_surface = font.render("Basics", True, 'black')
-rect = text_surface.get_rect(center = (500, 250))
+rect = text_surface.get_rect(center = (500, 100))
 
 folder = "monster"
 monster_frames = []
@@ -28,9 +28,12 @@ for file in sorted(os.listdir(folder)):
 running = True
 i = 0
 x = 700
+y = 200
 while running:
     if i >= len(monster_frames) - 1:
         i = 0
+    if x <= -200:
+        x = 1000
     
     clock.tick(60)
     

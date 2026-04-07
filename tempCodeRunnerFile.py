@@ -1,8 +1,3 @@
-import os, pygame
-folder = "monster"
-monster_frames = []
-for file in sorted(os.listdir(folder)):
-    monster_frames.append(pygame.image.load(f"{folder}/{file}"))
-
-for img in monster_frames:
-    print(img)
+(monster_frames[i], (x, 200))
+    i += 1
+    x -= 5
