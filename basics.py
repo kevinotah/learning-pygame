@@ -34,10 +34,13 @@ for file in sorted(os.listdir(player_standing_folder)):
     
 player_running_folder = "ben10running"
 player_running_frames = []
+player_running_backward_frames = []
 for file in sorted(os.listdir(player_running_folder)):
     player = pygame.image.load(f"{player_running_folder}/{file}").convert_alpha()
     player = pygame.transform.scale(player, (300, 300))
     player_running_frames.append(player)
+    
+    player_running_backward_frames.append(pygame.transform.flip(player, True, False))
 
 monster_index = 0
 monster_x = 700
@@ -79,7 +82,7 @@ while running:
         display.blit(player_running_frames[int(player_index)], (player_x, player_y))
         player_x += 5
     elif keys[pygame.K_LEFT]:
-        display.blit(player_standing_frames[int(player_index)], (player_x, player_y))
+        display.blit(player_running_backward_frames[int(player_index)], (player_x, player_y))
         player_x -= 5
     else:
         display.blit(player_standing_frames[int(player_index)], (player_x, player_y))
