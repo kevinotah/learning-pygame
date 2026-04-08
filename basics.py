@@ -78,10 +78,10 @@ while running:
     monster_x -= 5
     
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_RIGHT]:
+    if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
         display.blit(player_running_frames[int(player_index)], (player_x, player_y))
         player_x += 5
-    elif keys[pygame.K_LEFT]:
+    elif keys[pygame.K_LEFT] or keys[pygame.K_a]:
         display.blit(player_running_backward_frames[int(player_index)], (player_x, player_y))
         player_x -= 5
     else:
