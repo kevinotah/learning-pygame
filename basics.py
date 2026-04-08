@@ -78,7 +78,8 @@ while running:
     if keys[pygame.K_RIGHT]:
         display.blit(player_running_frames[int(player_index)], (player_x, player_y))
         player_x += 5
-    if keys[pygame.K_LEFT]:
+    elif keys[pygame.K_LEFT]:
+        display.blit(player_standing_frames[int(player_index)], (player_x, player_y))
         player_x -= 5
     else:
         display.blit(player_standing_frames[int(player_index)], (player_x, player_y))
